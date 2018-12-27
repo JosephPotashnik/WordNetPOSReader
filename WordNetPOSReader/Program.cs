@@ -5,13 +5,15 @@ using Newtonsoft.Json;
 
 namespace WordNetPOSReader
 {
+    //helper 1:
+    //check parts of speech of desired word in merriam webster online
 
-    //helper:
+    //helper 2:
     //you can check the POS tag of a word in NLTK brown corpus as well.
     //use interactive python window and write (replace your-word with what you'd like to check)
     //import nltk
     //words = nltk.corpus.brown.tagged_words(tagset='universal')
-    //x = set([y for (x,y) in words if x == your-word])
+    //x = set([y for (x,y) in words if x == desired word])
     //x
 
     class Program
@@ -126,6 +128,15 @@ namespace WordNetPOSReader
                 "suchlike",
                 "sundry",
                 "there",
+                "twain",
+                "various",
+                "whatever",
+                "whatsoever",
+                "when",
+                "wherewith",
+                "wherewithal",
+                "yon",
+                "yonder",
             };
 
             dict["D"] = new HashSet<string> //determiners
@@ -134,6 +145,8 @@ namespace WordNetPOSReader
                 "which",
                 "whichever",
                 "whichsoever",
+                "whatever",
+                "whatsoever",
                 "whose",
 
                 "a",
@@ -260,6 +273,15 @@ namespace WordNetPOSReader
                 "save",
                 "through",
                 "throughout",
+                "till",
+                "under",
+                "underneath",
+                "unlike",
+                "up",
+                "vis-a-vis",
+                "while",
+                "within",
+                "worth",
             };
 
             dict["CONJ"] = new HashSet<string>() //conjunctions
@@ -291,6 +313,13 @@ namespace WordNetPOSReader
                 "save", //=except, but
                 "so",
                 "though",
+                "till",
+                "unlike",
+                "when",
+                "wherewith",
+                "wherewithal",
+                "while",
+                "yet",
 
             };
             dict["N"].Add("without");  //outer place: came from without.
@@ -320,6 +349,13 @@ namespace WordNetPOSReader
             dict["N"].Add("self");
             dict["N"].Add("somebody");
             dict["N"].Add("there");
+            dict["N"].Add("till");
+            dict["N"].Add("twain");
+            dict["N"].Add("vis-a-vis");
+            dict["N"].Add("wherewithal");
+            dict["N"].Add("while");
+            dict["N"].Add("within");
+            dict["N"].Add("worth");
 
 
             dict["V"].Add("bar");
@@ -339,6 +375,10 @@ namespace WordNetPOSReader
             dict["V"].Add("regard");
             dict["V"].Add("round");
             dict["V"].Add("save");
+            dict["V"].Add("till");
+            dict["V"].Add("up");
+            dict["V"].Add("while");
+            dict["V"].Add("worth");
 
 
 
@@ -395,6 +435,18 @@ namespace WordNetPOSReader
             dict["ADV"].Add("though");
             dict["ADV"].Add("through");
             dict["ADV"].Add("throughout");
+            dict["ADV"].Add("under");
+            dict["ADV"].Add("underneath");
+            dict["ADV"].Add("up");
+            dict["ADV"].Add("vis-a-vis");
+            dict["ADV"].Add("whatever");
+            dict["ADV"].Add("whatsoever");
+            dict["ADV"].Add("when");
+            dict["ADV"].Add("wherewith");
+            dict["ADV"].Add("within");
+            dict["ADV"].Add("yet");
+            dict["ADV"].Add("yon");
+            dict["ADV"].Add("yonder");
 
             dict["ADV"].Add("this");
             dict["ADV"].Add("that");
@@ -434,6 +486,14 @@ namespace WordNetPOSReader
             dict["ADJ"].Add("suchlike");
             dict["ADJ"].Add("sundry");
             dict["ADJ"].Add("through");
+            dict["ADJ"].Add("under");
+            dict["ADJ"].Add("unlike");
+            dict["ADJ"].Add("up");
+            dict["ADJ"].Add("various");
+            dict["ADJ"].Add("within");
+            dict["ADJ"].Add("worth");
+            dict["ADJ"].Add("yon");
+            dict["ADJ"].Add("yonder");
 
             return dict;
         }
