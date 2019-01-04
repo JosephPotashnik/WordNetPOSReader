@@ -10,6 +10,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="LinearIndexedGrammarParser">
+      <HintPath>..\..\Linear-Indexed-Grammar\LinearIndexedGrammar\bin\Release\netcoreapp2.0\LinearIndexedGrammarParser.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="index.adj">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using LinearIndexedGrammarParser;
 using Newtonsoft.Json;
 
 namespace WordNetPOSReader
@@ -552,6 +553,7 @@ namespace WordNetPOSReader
         }
         static void Main()
         {
+
             var dict = CreateDictionary();
 
             //1. decision: remove all ambiguous P/ADV in WordNet, leaving them assigned P category.
@@ -567,7 +569,11 @@ namespace WordNetPOSReader
             //the ambiguity is present regardless of the complement "my house".
             dict["P"].ExceptWith(dict["ADV"]);
 
-            File.WriteAllText(@"UniversalVocabulary.json", JsonConvert.SerializeObject(dict, Formatting.Indented));
+
+            Vocabulary v = new Vocabulary();
+            v.POSWithPossibleWords = dict;
+
+            File.WriteAllText(@"UniversalVocabulary.json", JsonConvert.SerializeObject(v, Formatting.Indented));
 
         }
 
