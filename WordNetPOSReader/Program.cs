@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
@@ -206,7 +205,6 @@ namespace WordNetPOSReader
                 "among",        //discontent among the poor
                 "amongst",
                 "because",    //-rather new use: 'because NOUN', e.g: I was late because heavy traffic.
-                "because of",  //complex prepositions (prepositions of more than one word)
                 "beside",
                 "circa",
                 "despite",
@@ -282,6 +280,37 @@ namespace WordNetPOSReader
                 "while",
                 "within",
                 "worth",
+
+                //complex prepositions
+                "because of",
+                "according to",
+                "along with",
+                "apart from",
+                "contrary to",
+                "due to",
+                "except for",
+                "instead of",
+                "prior to",
+                "regardless of",
+                "ahead of",
+                "as for",
+                "as well as",
+                "aside from",
+                "but for",
+                "in between",
+                "inside of",
+                "in spite of",
+                "near to",
+                "next to",
+                "out of",
+                "outside of",
+                "owing to",
+                "subsequent to",
+                "such as",
+                "together with",
+                "up against",
+                "up to",
+                "up until",
             };
 
             dict["CONJ"] = new HashSet<string>() //conjunctions
@@ -322,6 +351,8 @@ namespace WordNetPOSReader
                 "yet",
 
             };
+
+
             dict["N"].Add("without");  //outer place: came from without.
             dict["N"].Add("above");
             dict["N"].Add("bar");
@@ -382,50 +413,18 @@ namespace WordNetPOSReader
 
 
 
-            dict["ADV"].Add("as");  //as soft as silk
-            dict["ADV"].Add("by"); // without object 'by' can act as adverb
-            dict["ADV"].Add("against");  //without object 'against' can act as adverb
-            dict["ADV"].Add("since");  //without object 'since' can act as adverb
-            dict["ADV"].Add("with");  //without object 'with' can act as adverb
-            dict["ADV"].Add("without"); /// as above...
-            dict["ADV"].Add("aboard");  
-            dict["ADV"].Add("about");  
-            dict["ADV"].Add("above"); 
-            dict["ADV"].Add("across");
-            dict["ADV"].Add("after");
+            dict["ADV"].Add("as");   
             dict["ADV"].Add("all");
-            dict["ADV"].Add("along");
-            dict["ADV"].Add("alongside");
             dict["ADV"].Add("any");
             dict["ADV"].Add("anything");
-            dict["ADV"].Add("around");
-            dict["ADV"].Add("astride");
-            dict["ADV"].Add("before");
-            dict["ADV"].Add("behind");
-            dict["ADV"].Add("below");
-            dict["ADV"].Add("beneath");
-            dict["ADV"].Add("besides");
-            dict["ADV"].Add("between");
-            dict["ADV"].Add("beyond");
             dict["ADV"].Add("but");
-            dict["ADV"].Add("down");
             dict["ADV"].Add("each");    //cost a dollar each
             dict["ADV"].Add("either");
-            dict["ADV"].Add("in");
-            dict["ADV"].Add("inside");
             dict["ADV"].Add("more");
             dict["ADV"].Add("most");
-            dict["ADV"].Add("near");
             dict["ADV"].Add("neither");
             dict["ADV"].Add("notwithstanding");
-            dict["ADV"].Add("off");
-            dict["ADV"].Add("on");
-            dict["ADV"].Add("opposite");
             dict["ADV"].Add("otherwise");
-            dict["ADV"].Add("outside");
-            dict["ADV"].Add("over");
-            dict["ADV"].Add("past");
-            dict["ADV"].Add("round");
             dict["ADV"].Add("so");
             dict["ADV"].Add("some");
             dict["ADV"].Add("something");
@@ -433,12 +432,6 @@ namespace WordNetPOSReader
             dict["ADV"].Add("such");
             dict["ADV"].Add("there");
             dict["ADV"].Add("though");
-            dict["ADV"].Add("through");
-            dict["ADV"].Add("throughout");
-            dict["ADV"].Add("under");
-            dict["ADV"].Add("underneath");
-            dict["ADV"].Add("up");
-            dict["ADV"].Add("vis-a-vis");
             dict["ADV"].Add("whatever");
             dict["ADV"].Add("whatsoever");
             dict["ADV"].Add("when");
@@ -450,6 +443,53 @@ namespace WordNetPOSReader
 
             dict["ADV"].Add("this");
             dict["ADV"].Add("that");
+
+            //spatial or temporal prepositions that can act as
+            //adverbs without the complementing noun
+            //dict["ADV"].Add("by");
+            //dict["ADV"].Add("against");
+            //dict["ADV"].Add("since");
+            //dict["ADV"].Add("with");
+            //dict["ADV"].Add("without");
+            //dict["ADV"].Add("aboard");
+            //dict["ADV"].Add("about");
+            //dict["ADV"].Add("above");
+            //dict["ADV"].Add("across");
+            //dict["ADV"].Add("after");
+            //dict["ADV"].Add("along");
+            //dict["ADV"].Add("alongside");
+            //dict["ADV"].Add("around");
+            //dict["ADV"].Add("astride");
+            //dict["ADV"].Add("before");
+            //dict["ADV"].Add("behind");
+            //dict["ADV"].Add("below");
+            //dict["ADV"].Add("beneath");
+            //dict["ADV"].Add("besides");
+            //dict["ADV"].Add("between");
+            //dict["ADV"].Add("beyond");
+            //dict["ADV"].Add("down");
+            //dict["ADV"].Add("in");
+            //dict["ADV"].Add("inside");
+            //dict["ADV"].Add("near");
+            //dict["ADV"].Add("off");
+            //dict["ADV"].Add("on");
+            //dict["ADV"].Add("opposite");
+            //dict["ADV"].Add("outside");
+            //dict["ADV"].Add("over");
+            //dict["ADV"].Add("past");
+            //dict["ADV"].Add("round");
+            //dict["ADV"].Add("through");
+            //dict["ADV"].Add("throughout");
+            //dict["ADV"].Add("under");
+            //dict["ADV"].Add("underneath");
+            //dict["ADV"].Add("up");
+            //dict["ADV"].Add("vis-a-vis");
+
+
+
+
+
+
             //dict["ADV"].Add("to"); //rare? he brought her to (=woke her up),  we came to (=close to the wind)
             //dict["ADV"].Add("upon"); //obsolete
             //dict["ADJ"].Add("about"); //rare? there is a scarcity of jobs about
@@ -512,22 +552,25 @@ namespace WordNetPOSReader
         }
         static void Main()
         {
-
             var dict = CreateDictionary();
 
-            //https://www.ucl.ac.uk/internet-grammar/preps/complex.htm
-            var l = GetPossiblePOS("much", dict);
-            var l2 = GetPossiblePOS("because of", dict);
-            var l3 = GetPossiblePOS("in spite of", dict);
-            var l4 = GetPossiblePOS("according", dict);
-            var l5 = GetPossiblePOS("according to", dict);
-            var l6 = GetPossiblePOS("instead of", dict);
-            var l7 = GetPossiblePOS("in lieu of", dict);
+            //1. decision: remove all ambiguous P/ADV in WordNet, leaving them assigned P category.
+            //motivation: I think prepositional phrases can function as adverbial phrases, regardless of complement.
+            //sometimes, P does not take a complement (it can be salient, or some deictic center/time, etc)
+            //hence, ADJP/ADVP -> P NP, or ADJP/ADVP -> P , the adverbial function or the adjectival function is identical.
+            //for instance:  I saw the girl [outside]
+            //               I saw the girl [outside my house]
+
+            //note: there is ambiguity between adjectival phrase and adverbial phrase:
+            //outside (my house) = where the girl is (adjectival)
+            //outside (my house) = where the seeing took place (adverbial), the girl could be elsewhere.
+            //the ambiguity is present regardless of the complement "my house".
+            dict["P"].ExceptWith(dict["ADV"]);
 
             File.WriteAllText(@"UniversalVocabulary.json", JsonConvert.SerializeObject(dict, Formatting.Indented));
 
         }
-        
+
         public static HashSet<string> GetWords(string category, string filename)
         {
             var l = new HashSet<string>();
