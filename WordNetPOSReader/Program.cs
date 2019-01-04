@@ -567,8 +567,7 @@ namespace WordNetPOSReader
             //outside (my house) = where the girl is (adjectival)
             //outside (my house) = where the seeing took place (adverbial), the girl could be elsewhere.
             //the ambiguity is present regardless of the complement "my house".
-            dict["P"].ExceptWith(dict["ADV"]);
-
+            dict["ADV"].ExceptWith(dict["P"]);
 
             Vocabulary v = new Vocabulary();
             v.POSWithPossibleWords = dict;
