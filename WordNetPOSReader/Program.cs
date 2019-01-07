@@ -137,6 +137,7 @@ namespace WordNetPOSReader
                 "wherewithal",
                 "yon",
                 "yonder",
+                "whether",
             };
 
             dict["D"] = new HashSet<string> //determiners
@@ -352,6 +353,7 @@ namespace WordNetPOSReader
                 "yet",
                 "how",
                 "where",
+                "whether",
 
             };
 
@@ -392,6 +394,8 @@ namespace WordNetPOSReader
             dict["N"].Add("worth");
             dict["N"].Add("where");
 
+            dict["V"].Add("would");
+            dict["V"].Add("shall");
 
             dict["V"].Add("bar");
             dict["V"].Add("barring");
@@ -446,6 +450,7 @@ namespace WordNetPOSReader
             dict["ADV"].Add("yonder");
             dict["ADV"].Add("how");
             dict["ADV"].Add("where");
+            dict["ADV"].Add("else");
 
             dict["ADV"].Add("this");
             dict["ADV"].Add("that");
@@ -540,6 +545,7 @@ namespace WordNetPOSReader
             dict["ADJ"].Add("worth");
             dict["ADJ"].Add("yon");
             dict["ADJ"].Add("yonder");
+            dict["ADJ"].Add("else");
 
 
             //if the verb is identical in past participle and past simple -
@@ -728,6 +734,7 @@ namespace WordNetPOSReader
             irregularPastParticipleVerbs.Add("wound");
             irregularPastParticipleVerbs.Add("wrung");
             irregularPastParticipleVerbs.Add("written");
+            irregularPastParticipleVerbs.Add("withdrown");
 
 
             irregularPastSimpleVerbs.Add("arose");
@@ -794,6 +801,7 @@ namespace WordNetPOSReader
             irregularPastSimpleVerbs.Add("wore");
             irregularPastSimpleVerbs.Add("wove");
             irregularPastSimpleVerbs.Add("wrote");
+            irregularPastSimpleVerbs.Add("withdrew");
 
             foreach (var verb in irregularPastSimpleVerbs)
                 dict["V"].Add(verb);
@@ -804,6 +812,91 @@ namespace WordNetPOSReader
                 dict["ADJ"].Add(verb);
             }
 
+
+            //irregular plurals:
+            dict["N"].Add("addenda");
+            dict["N"].Add("alumnae");
+            dict["N"].Add("alumni");
+            dict["N"].Add("analyses");
+            dict["N"].Add("antennae");
+            dict["N"].Add("antennas");
+            dict["N"].Add("antitheses");
+            dict["N"].Add("apexes");
+            dict["N"].Add("apices");
+            dict["N"].Add("appendices");
+            dict["N"].Add("appendixes");
+            dict["N"].Add("axes");
+            dict["N"].Add("bacilli");
+            dict["N"].Add("bacteria");
+            dict["N"].Add("bases");
+            dict["N"].Add("cacti");
+            dict["N"].Add("children");
+            dict["N"].Add("concerti");
+            dict["N"].Add("corpora");
+            dict["N"].Add("codices");
+            dict["N"].Add("crises");
+            dict["N"].Add("criteria");
+            dict["N"].Add("curricula");
+            dict["N"].Add("data");
+            dict["N"].Add("diagnoses");
+            dict["N"].Add("dice");
+            dict["N"].Add("dwarves");
+            dict["N"].Add("ellipses");
+            dict["N"].Add("errata");
+            dict["N"].Add("fezzes");
+            dict["N"].Add("foci");
+            dict["N"].Add("feet");
+            dict["N"].Add("formulae");
+            dict["N"].Add("fungi");
+            dict["N"].Add("genera");
+            dict["N"].Add("geese");
+            dict["N"].Add("graffiti");
+            dict["N"].Add("halves");
+            dict["N"].Add("hooves");
+            dict["N"].Add("hypotheses");
+            dict["N"].Add("indices");
+            dict["N"].Add("larvae");
+            dict["N"].Add("libretti");
+            dict["N"].Add("loaves");
+            dict["N"].Add("loci");
+            dict["N"].Add("lice");
+            dict["N"].Add("men");
+            dict["N"].Add("matrices");
+            dict["N"].Add("media");
+            dict["N"].Add("memoranda");
+            dict["N"].Add("minutiae");
+            dict["N"].Add("mice");
+            dict["N"].Add("nebulae");
+            dict["N"].Add("nuclei");
+            dict["N"].Add("oases");
+            dict["N"].Add("opera");
+            dict["N"].Add("ova");
+            dict["N"].Add("oxen");
+            dict["N"].Add("parentheses");
+            dict["N"].Add("phenomena");
+            dict["N"].Add("phyla");
+            dict["N"].Add("prognoses");
+            dict["N"].Add("quizzes");
+            dict["N"].Add("radii");
+            dict["N"].Add("referenda");
+            dict["N"].Add("scarves");
+            dict["N"].Add("selves");
+            dict["N"].Add("stimuli");
+            dict["N"].Add("strata");
+            dict["N"].Add("syllabi");
+            dict["N"].Add("symposia");
+            dict["N"].Add("synopses");
+            dict["N"].Add("theses");
+            dict["N"].Add("thieves");
+            dict["N"].Add("teeth");
+            dict["N"].Add("vertebrae");
+            dict["N"].Add("vertices");
+            dict["N"].Add("vitae");
+            dict["N"].Add("vortices");
+            dict["N"].Add("wharves");
+            dict["N"].Add("wives");
+            dict["N"].Add("wolves");
+            dict["N"].Add("women");
             return dict;
         }
 
