@@ -350,6 +350,8 @@ namespace WordNetPOSReader
                 "wherewithal",
                 "while",
                 "yet",
+                "how",
+                "where",
 
             };
 
@@ -388,6 +390,7 @@ namespace WordNetPOSReader
             dict["N"].Add("while");
             dict["N"].Add("within");
             dict["N"].Add("worth");
+            dict["N"].Add("where");
 
 
             dict["V"].Add("bar");
@@ -441,6 +444,8 @@ namespace WordNetPOSReader
             dict["ADV"].Add("yet");
             dict["ADV"].Add("yon");
             dict["ADV"].Add("yonder");
+            dict["ADV"].Add("how");
+            dict["ADV"].Add("where");
 
             dict["ADV"].Add("this");
             dict["ADV"].Add("that");
@@ -535,6 +540,269 @@ namespace WordNetPOSReader
             dict["ADJ"].Add("worth");
             dict["ADJ"].Add("yon");
             dict["ADJ"].Add("yonder");
+
+
+            //if the verb is identical in past participle and past simple -
+            //add it just to the past participle list (enough)
+            // http://conjugator.reverso.net/conjugation-irregular-verbs-english.html
+
+            List<string> irregularPastParticipleVerbs = new List<string>();
+            List<string> irregularPastSimpleVerbs = new List<string>();
+
+            irregularPastParticipleVerbs.Add("abode");
+            irregularPastParticipleVerbs.Add("arisen");
+            irregularPastParticipleVerbs.Add("awoken");
+            irregularPastParticipleVerbs.Add("been");
+            irregularPastParticipleVerbs.Add("borne");
+            irregularPastParticipleVerbs.Add("beaten");
+            irregularPastParticipleVerbs.Add("become");
+            irregularPastParticipleVerbs.Add("begotten");
+            irregularPastParticipleVerbs.Add("begun");
+            irregularPastParticipleVerbs.Add("bent");
+            irregularPastParticipleVerbs.Add("besought");
+            irregularPastParticipleVerbs.Add("beseeched");
+            irregularPastParticipleVerbs.Add("bet");
+            irregularPastParticipleVerbs.Add("bid");
+            irregularPastParticipleVerbs.Add("bidden");
+            irregularPastParticipleVerbs.Add("bound");
+            irregularPastParticipleVerbs.Add("bitten");
+            irregularPastParticipleVerbs.Add("bled");
+            irregularPastParticipleVerbs.Add("blown");
+            irregularPastParticipleVerbs.Add("broken");
+            irregularPastParticipleVerbs.Add("bred");
+            irregularPastParticipleVerbs.Add("brought");
+            irregularPastParticipleVerbs.Add("built");
+            irregularPastParticipleVerbs.Add("burnt");
+            irregularPastParticipleVerbs.Add("burst");
+
+            irregularPastParticipleVerbs.Add("bought");
+            irregularPastParticipleVerbs.Add("cast");
+            irregularPastParticipleVerbs.Add("caught");
+            irregularPastParticipleVerbs.Add("chidden");
+            irregularPastParticipleVerbs.Add("chosen");
+            irregularPastParticipleVerbs.Add("cloven");
+            irregularPastParticipleVerbs.Add("cleft");
+            irregularPastParticipleVerbs.Add("clung");
+            irregularPastParticipleVerbs.Add("come");
+            irregularPastParticipleVerbs.Add("cost");
+            irregularPastParticipleVerbs.Add("crept");
+            irregularPastParticipleVerbs.Add("cut");
+            irregularPastParticipleVerbs.Add("dealt");
+            irregularPastParticipleVerbs.Add("dug");
+            irregularPastParticipleVerbs.Add("done");
+            irregularPastParticipleVerbs.Add("drawn");
+            irregularPastParticipleVerbs.Add("dreamt");
+            irregularPastParticipleVerbs.Add("drunk");
+            irregularPastParticipleVerbs.Add("driven");
+            irregularPastParticipleVerbs.Add("dwelt");
+            irregularPastParticipleVerbs.Add("eaten");
+            irregularPastParticipleVerbs.Add("fallen");
+            irregularPastParticipleVerbs.Add("fed");
+            irregularPastParticipleVerbs.Add("felt");
+            irregularPastParticipleVerbs.Add("fought");
+            irregularPastParticipleVerbs.Add("found");
+            irregularPastParticipleVerbs.Add("fled");
+            irregularPastParticipleVerbs.Add("flung");
+            irregularPastParticipleVerbs.Add("flown");
+            irregularPastParticipleVerbs.Add("forbidden");
+            irregularPastParticipleVerbs.Add("forgotten");
+            irregularPastParticipleVerbs.Add("forsaken");
+            irregularPastParticipleVerbs.Add("frozen");
+            irregularPastParticipleVerbs.Add("gotten");
+            irregularPastParticipleVerbs.Add("got");
+            irregularPastParticipleVerbs.Add("gilt");
+            irregularPastParticipleVerbs.Add("girt");
+            irregularPastParticipleVerbs.Add("given");
+            irregularPastParticipleVerbs.Add("gone");
+            irregularPastParticipleVerbs.Add("ground");
+            irregularPastParticipleVerbs.Add("grown");
+            irregularPastParticipleVerbs.Add("hung");
+            irregularPastParticipleVerbs.Add("had");
+            irregularPastParticipleVerbs.Add("heard");
+            irregularPastParticipleVerbs.Add("hewn");
+            irregularPastParticipleVerbs.Add("hid");
+            irregularPastParticipleVerbs.Add("hidden");
+            irregularPastParticipleVerbs.Add("hit");
+            irregularPastParticipleVerbs.Add("held");
+            irregularPastParticipleVerbs.Add("hurt");
+            irregularPastParticipleVerbs.Add("kept");
+            irregularPastParticipleVerbs.Add("knelt");
+            irregularPastParticipleVerbs.Add("known");
+            irregularPastParticipleVerbs.Add("laden");
+            irregularPastParticipleVerbs.Add("laid");
+            irregularPastParticipleVerbs.Add("led");
+            irregularPastParticipleVerbs.Add("leant");
+            irregularPastParticipleVerbs.Add("leapt");
+            irregularPastParticipleVerbs.Add("learnt");
+            irregularPastParticipleVerbs.Add("left");
+            irregularPastParticipleVerbs.Add("lent");
+            irregularPastParticipleVerbs.Add("let");
+            irregularPastParticipleVerbs.Add("lain");
+            irregularPastParticipleVerbs.Add("lit");
+            irregularPastParticipleVerbs.Add("lost");
+            irregularPastParticipleVerbs.Add("made");
+            irregularPastParticipleVerbs.Add("meant");
+            irregularPastParticipleVerbs.Add("met");
+            irregularPastParticipleVerbs.Add("mown");
+            irregularPastParticipleVerbs.Add("paid");
+            irregularPastParticipleVerbs.Add("put");
+            irregularPastParticipleVerbs.Add("quit");
+            irregularPastParticipleVerbs.Add("read");
+            irregularPastParticipleVerbs.Add("rid");
+            irregularPastParticipleVerbs.Add("rent");
+            irregularPastParticipleVerbs.Add("ridden");
+            irregularPastParticipleVerbs.Add("rung");
+            irregularPastParticipleVerbs.Add("risen");
+            irregularPastParticipleVerbs.Add("run");
+            irregularPastParticipleVerbs.Add("sawn");
+            irregularPastParticipleVerbs.Add("said");
+            irregularPastParticipleVerbs.Add("seen");
+            irregularPastParticipleVerbs.Add("sought");
+            irregularPastParticipleVerbs.Add("sold");
+            irregularPastParticipleVerbs.Add("sent");
+            irregularPastParticipleVerbs.Add("set");
+            irregularPastParticipleVerbs.Add("sewn");
+            irregularPastParticipleVerbs.Add("shaken");
+            irregularPastParticipleVerbs.Add("shaven");
+            irregularPastParticipleVerbs.Add("shorn");
+            irregularPastParticipleVerbs.Add("shone");
+            irregularPastParticipleVerbs.Add("shod");
+            irregularPastParticipleVerbs.Add("shed");
+            irregularPastParticipleVerbs.Add("shot");
+            irregularPastParticipleVerbs.Add("shown");
+            irregularPastParticipleVerbs.Add("shrunk");
+            irregularPastParticipleVerbs.Add("shut");
+            irregularPastParticipleVerbs.Add("sung");
+            irregularPastParticipleVerbs.Add("sat");
+            irregularPastParticipleVerbs.Add("slain");
+            irregularPastParticipleVerbs.Add("slept");
+            irregularPastParticipleVerbs.Add("slid");
+            irregularPastParticipleVerbs.Add("slung");
+            irregularPastParticipleVerbs.Add("slunk");
+            irregularPastParticipleVerbs.Add("slit");
+            irregularPastParticipleVerbs.Add("smelt");
+            irregularPastParticipleVerbs.Add("smitten");
+            irregularPastParticipleVerbs.Add("sown");
+            irregularPastParticipleVerbs.Add("spoken");
+            irregularPastParticipleVerbs.Add("sped");
+            irregularPastParticipleVerbs.Add("spelt");
+            irregularPastParticipleVerbs.Add("spent");
+            irregularPastParticipleVerbs.Add("spilt");
+            irregularPastParticipleVerbs.Add("spun");
+            irregularPastParticipleVerbs.Add("spat");
+            irregularPastParticipleVerbs.Add("split");
+            irregularPastParticipleVerbs.Add("spoilt");
+            irregularPastParticipleVerbs.Add("spread");
+            irregularPastParticipleVerbs.Add("sprung");
+            irregularPastParticipleVerbs.Add("stood");
+            irregularPastParticipleVerbs.Add("stove");
+            irregularPastParticipleVerbs.Add("stolen");
+            irregularPastParticipleVerbs.Add("stuck");
+            irregularPastParticipleVerbs.Add("stung");
+            irregularPastParticipleVerbs.Add("stunk");
+            irregularPastParticipleVerbs.Add("strewn");
+            irregularPastParticipleVerbs.Add("stridden");
+            irregularPastParticipleVerbs.Add("struck");
+            irregularPastParticipleVerbs.Add("stricken");
+            irregularPastParticipleVerbs.Add("strung");
+            irregularPastParticipleVerbs.Add("striven");
+            irregularPastParticipleVerbs.Add("sworn");
+            irregularPastParticipleVerbs.Add("swept");
+            irregularPastParticipleVerbs.Add("swollen");
+            irregularPastParticipleVerbs.Add("swum");
+            irregularPastParticipleVerbs.Add("swung");
+            irregularPastParticipleVerbs.Add("taken");
+            irregularPastParticipleVerbs.Add("taught");
+            irregularPastParticipleVerbs.Add("torn");
+            irregularPastParticipleVerbs.Add("told");
+            irregularPastParticipleVerbs.Add("thought");
+            irregularPastParticipleVerbs.Add("thriven");
+            irregularPastParticipleVerbs.Add("thrown");
+            irregularPastParticipleVerbs.Add("thrust");
+            irregularPastParticipleVerbs.Add("trodden");
+            irregularPastParticipleVerbs.Add("woken");
+            irregularPastParticipleVerbs.Add("worn");
+            irregularPastParticipleVerbs.Add("woven");
+            irregularPastParticipleVerbs.Add("wept");
+            irregularPastParticipleVerbs.Add("won");
+            irregularPastParticipleVerbs.Add("wound");
+            irregularPastParticipleVerbs.Add("wrung");
+            irregularPastParticipleVerbs.Add("written");
+
+
+            irregularPastSimpleVerbs.Add("arose");
+            irregularPastSimpleVerbs.Add("awoke");
+            irregularPastSimpleVerbs.Add("was");
+            irregularPastSimpleVerbs.Add("were");
+            irregularPastSimpleVerbs.Add("bear");
+            irregularPastSimpleVerbs.Add("beat");
+            irregularPastSimpleVerbs.Add("became");
+            irregularPastSimpleVerbs.Add("begat");
+            irregularPastSimpleVerbs.Add("begot");
+            irregularPastSimpleVerbs.Add("began");
+            irregularPastSimpleVerbs.Add("bade");
+            irregularPastSimpleVerbs.Add("bit");
+            irregularPastSimpleVerbs.Add("blew");
+            irregularPastSimpleVerbs.Add("broke");
+            irregularPastSimpleVerbs.Add("could");
+            irregularPastSimpleVerbs.Add("chid");
+            irregularPastSimpleVerbs.Add("chose");
+            irregularPastSimpleVerbs.Add("clove");
+            irregularPastSimpleVerbs.Add("came");
+            irregularPastSimpleVerbs.Add("dove");
+            irregularPastSimpleVerbs.Add("did");
+            irregularPastSimpleVerbs.Add("drew");
+            irregularPastSimpleVerbs.Add("drank");
+            irregularPastSimpleVerbs.Add("drove");
+            irregularPastSimpleVerbs.Add("ate");
+            irregularPastSimpleVerbs.Add("fell");
+            irregularPastSimpleVerbs.Add("flew");
+            irregularPastSimpleVerbs.Add("forbade");
+            irregularPastSimpleVerbs.Add("forgot");
+            irregularPastSimpleVerbs.Add("forsook");
+            irregularPastSimpleVerbs.Add("froze");
+            irregularPastSimpleVerbs.Add("gave");
+            irregularPastSimpleVerbs.Add("went");
+            irregularPastSimpleVerbs.Add("grew");
+            irregularPastSimpleVerbs.Add("knew");
+            irregularPastSimpleVerbs.Add("lay");
+            irregularPastSimpleVerbs.Add("might");
+            irregularPastSimpleVerbs.Add("rode");
+            irregularPastSimpleVerbs.Add("rang");
+            irregularPastSimpleVerbs.Add("rose");
+            irregularPastSimpleVerbs.Add("ran");
+            irregularPastSimpleVerbs.Add("saw");
+            irregularPastSimpleVerbs.Add("shook");
+            irregularPastSimpleVerbs.Add("shrank");
+            irregularPastSimpleVerbs.Add("sang");
+            irregularPastSimpleVerbs.Add("slew");
+            irregularPastSimpleVerbs.Add("smote");
+            irregularPastSimpleVerbs.Add("spoke");
+            irregularPastSimpleVerbs.Add("span");
+            irregularPastSimpleVerbs.Add("sprang");
+            irregularPastSimpleVerbs.Add("stole");
+            irregularPastSimpleVerbs.Add("stank");
+            irregularPastSimpleVerbs.Add("strode");
+            irregularPastSimpleVerbs.Add("strove");
+            irregularPastSimpleVerbs.Add("swore");
+            irregularPastSimpleVerbs.Add("swam");
+            irregularPastSimpleVerbs.Add("took");
+            irregularPastSimpleVerbs.Add("tore");
+            irregularPastSimpleVerbs.Add("throve");
+            irregularPastSimpleVerbs.Add("threw");
+            irregularPastSimpleVerbs.Add("woke");
+            irregularPastSimpleVerbs.Add("wore");
+            irregularPastSimpleVerbs.Add("wove");
+            irregularPastSimpleVerbs.Add("wrote");
+
+            foreach (var verb in irregularPastSimpleVerbs)
+                dict["V"].Add(verb);
+
+            foreach (var verb in irregularPastParticipleVerbs)
+            {
+                dict["V"].Add(verb);
+                dict["ADJ"].Add(verb);
+            }
 
             return dict;
         }
