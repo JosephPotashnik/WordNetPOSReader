@@ -396,6 +396,7 @@ namespace WordNetPOSReader
 
             dict["V"].Add("would");
             dict["V"].Add("shall");
+            dict["V"].Add("should");
 
             dict["V"].Add("bar");
             dict["V"].Add("barring");
@@ -734,7 +735,9 @@ namespace WordNetPOSReader
             irregularPastParticipleVerbs.Add("wound");
             irregularPastParticipleVerbs.Add("wrung");
             irregularPastParticipleVerbs.Add("written");
-            irregularPastParticipleVerbs.Add("withdrown");
+            irregularPastParticipleVerbs.Add("withdrawn");
+            irregularPastParticipleVerbs.Add("undone");
+            irregularPastParticipleVerbs.Add("undergone");
 
 
             irregularPastSimpleVerbs.Add("arose");
@@ -802,6 +805,8 @@ namespace WordNetPOSReader
             irregularPastSimpleVerbs.Add("wove");
             irregularPastSimpleVerbs.Add("wrote");
             irregularPastSimpleVerbs.Add("withdrew");
+            irregularPastSimpleVerbs.Add("undid");
+            irregularPastSimpleVerbs.Add("underwent");
 
             foreach (var verb in irregularPastSimpleVerbs)
                 dict["V"].Add(verb);
