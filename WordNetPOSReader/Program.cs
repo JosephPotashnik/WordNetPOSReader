@@ -948,6 +948,10 @@ namespace WordNetPOSReader
             //the ambiguity is present regardless of the complement "my house".
             dict["ADV"].ExceptWith(dict["P"]);
 
+            //remove adjectives from adjectives list that are regarded as determiners
+            //eg. "no"
+            dict["ADJ"].ExceptWith(dict["D"]);
+
             Vocabulary v = new Vocabulary();
             v.POSWithPossibleWords = dict;
             File.WriteAllText(@"UniversalVocabulary.json", JsonConvert.SerializeObject(v, Formatting.Indented));
