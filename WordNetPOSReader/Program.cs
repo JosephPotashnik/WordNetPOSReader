@@ -283,36 +283,41 @@ namespace WordNetPOSReader
                 "within",
                 "worth",
 
-                //complex prepositions
-                "because of",
-                "according to",
-                "along with",
-                "apart from",
-                "contrary to",
-                "due to",
-                "except for",
-                "instead of",
-                "prior to",
-                "regardless of",
-                "ahead of",
-                "as for",
-                "as well as",
-                "aside from",
-                "but for",
-                "in between",
-                "inside of",
-                "in spite of",
-                "near to",
-                "next to",
-                "out of",
-                "outside of",
-                "owing to",
-                "subsequent to",
-                "such as",
-                "together with",
-                "up against",
-                "up to",
-                "up until",
+                //compounded (complex) prepositions
+                // should we treat them idiomatically as a single POS, or
+                //let the syntactic rules find a corresponding strucure?
+                //(say, ZP -> P PP -> P P NP ?
+                //null hypothesis: let the syntax try to converget to a structure.
+                //think about compositional semantics for compounded P's? 
+                //"because of",
+                //"according to",
+                //"along with",
+                //"apart from",
+                //"contrary to",
+                //"due to",
+                //"except for",
+                //"instead of",
+                //"prior to",
+                //"regardless of",
+                //"ahead of",
+                //"as for",
+                //"as well as",
+                //"aside from",
+                //"but for",
+                //"in between",
+                //"inside of",
+                //"in spite of",
+                //"near to",
+                //"next to",
+                //"out of",
+                //"outside of",
+                //"owing to",
+                //"subsequent to",
+                //"such as",
+                //"together with",
+                //"up against",
+                //"up to",
+                //"up until",
             };
 
             dict["CONJ"] = new HashSet<string>() //conjunctions
@@ -422,7 +427,6 @@ namespace WordNetPOSReader
             dict["V"].Add("worth");
 
 
-
             dict["ADV"].Add("as");   
             dict["ADV"].Add("all");
             dict["ADV"].Add("any");
@@ -499,10 +503,6 @@ namespace WordNetPOSReader
             //dict["ADV"].Add("vis-a-vis");
 
 
-
-
-
-
             //dict["ADV"].Add("to"); //rare? he brought her to (=woke her up),  we came to (=close to the wind)
             //dict["ADV"].Add("upon"); //obsolete
             //dict["ADJ"].Add("about"); //rare? there is a scarcity of jobs about
@@ -550,6 +550,13 @@ namespace WordNetPOSReader
             dict["ADJ"].Add("else");
 
 
+            AddIrregularVerbConjugations(dict);
+            AddIrregularPlurals(dict);
+            return dict;
+        }
+
+        private static void AddIrregularVerbConjugations(Dictionary<string, HashSet<string>> dict)
+        {
             //if the verb is identical in past participle and past simple -
             //add it just to the past participle list (enough)
             // http://conjugator.reverso.net/conjugation-irregular-verbs-english.html
@@ -822,9 +829,10 @@ namespace WordNetPOSReader
                 dict["V"].Add(verb);
                 dict["ADJ"].Add(verb);
             }
+        }
 
-
-            //irregular plurals:
+        private static void AddIrregularPlurals(Dictionary<string, HashSet<string>> dict)
+        {
             dict["N"].Add("addenda");
             dict["N"].Add("alumnae");
             dict["N"].Add("alumni");
@@ -908,7 +916,6 @@ namespace WordNetPOSReader
             dict["N"].Add("wives");
             dict["N"].Add("wolves");
             dict["N"].Add("women");
-            return dict;
         }
 
         public static List<string> GetPossiblePOS(string word, Dictionary<string, HashSet<string>> dict)
@@ -943,7 +950,6 @@ namespace WordNetPOSReader
 
             Vocabulary v = new Vocabulary();
             v.POSWithPossibleWords = dict;
-
             File.WriteAllText(@"UniversalVocabulary.json", JsonConvert.SerializeObject(v, Formatting.Indented));
 
         }
