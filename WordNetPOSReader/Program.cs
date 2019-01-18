@@ -2,7 +2,7 @@
 using System.IO;
 using LinearIndexedGrammarParser;
 using Newtonsoft.Json;
-
+  
 namespace WordNetPOSReader
 {
     //helper 1:
@@ -428,6 +428,8 @@ namespace WordNetPOSReader
             dict["V"].Add("is");
             dict["V"].Add("am");
             dict["V"].Add("are");
+            dict["V"].Add("has");
+            dict["V"].Add("have");
 
 
             dict["ADV"].Add("as");   
