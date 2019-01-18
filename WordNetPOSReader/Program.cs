@@ -425,6 +425,9 @@ namespace WordNetPOSReader
             dict["V"].Add("up");
             dict["V"].Add("while");
             dict["V"].Add("worth");
+            dict["V"].Add("is");
+            dict["V"].Add("am");
+            dict["V"].Add("are");
 
 
             dict["ADV"].Add("as");   
