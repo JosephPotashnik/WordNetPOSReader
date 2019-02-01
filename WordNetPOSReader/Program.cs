@@ -47,6 +47,7 @@ namespace WordNetPOSReader
                 "his", //my eyes are brown and his are green (possessive pronoun)
                 "who",
                 "anybody",
+                "nobody",
                 "anyone",
                 "everybody",
                 "everyone",
@@ -282,6 +283,7 @@ namespace WordNetPOSReader
                 "while",
                 "within",
                 "worth",
+                "behind",
 
                 //compounded (complex) prepositions
                 // should we treat them idiomatically as a single POS, or
@@ -359,6 +361,7 @@ namespace WordNetPOSReader
                 "how",
                 "where",
                 "whether",
+                "as",
 
             };
 
