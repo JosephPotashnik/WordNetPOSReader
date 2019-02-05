@@ -406,6 +406,7 @@ namespace WordNetPOSReader
             dict["V"].Add("shall");
             dict["V"].Add("should");
             dict["V"].Add("ought");
+            dict["V"].Add("must");
 
             dict["V"].Add("bar");
             dict["V"].Add("barring");
@@ -433,6 +434,7 @@ namespace WordNetPOSReader
             dict["V"].Add("are");
             dict["V"].Add("has");
             dict["V"].Add("have");
+            dict["V"].Add("may");
 
 
             dict["ADV"].Add("as");   
@@ -469,52 +471,7 @@ namespace WordNetPOSReader
             dict["ADV"].Add("this");
             dict["ADV"].Add("that");
 
-            //spatial or temporal prepositions that can act as
-            //adverbs without the complementing noun
-            //dict["ADV"].Add("by");
-            //dict["ADV"].Add("against");
-            //dict["ADV"].Add("since");
-            //dict["ADV"].Add("with");
-            //dict["ADV"].Add("without");
-            //dict["ADV"].Add("aboard");
-            //dict["ADV"].Add("about");
-            //dict["ADV"].Add("above");
-            //dict["ADV"].Add("across");
-            //dict["ADV"].Add("after");
-            //dict["ADV"].Add("along");
-            //dict["ADV"].Add("alongside");
-            //dict["ADV"].Add("around");
-            //dict["ADV"].Add("astride");
-            //dict["ADV"].Add("before");
-            //dict["ADV"].Add("behind");
-            //dict["ADV"].Add("below");
-            //dict["ADV"].Add("beneath");
-            //dict["ADV"].Add("besides");
-            //dict["ADV"].Add("between");
-            //dict["ADV"].Add("beyond");
-            //dict["ADV"].Add("down");
-            //dict["ADV"].Add("in");
-            //dict["ADV"].Add("inside");
-            //dict["ADV"].Add("near");
-            //dict["ADV"].Add("off");
-            //dict["ADV"].Add("on");
-            //dict["ADV"].Add("opposite");
-            //dict["ADV"].Add("outside");
-            //dict["ADV"].Add("over");
-            //dict["ADV"].Add("past");
-            //dict["ADV"].Add("round");
-            //dict["ADV"].Add("through");
-            //dict["ADV"].Add("throughout");
-            //dict["ADV"].Add("under");
-            //dict["ADV"].Add("underneath");
-            //dict["ADV"].Add("up");
-            //dict["ADV"].Add("vis-a-vis");
-
-
-            //dict["ADV"].Add("to"); //rare? he brought her to (=woke her up),  we came to (=close to the wind)
-            //dict["ADV"].Add("upon"); //obsolete
-            //dict["ADJ"].Add("about"); //rare? there is a scarcity of jobs about
-
+            
             dict["ADJ"].Add("above");
             dict["ADJ"].Add("another"); //another better classified as an adjective than determiner, see https://en.wikipedia.org/wiki/English_determiners
             dict["ADJ"].Add("before");
@@ -523,14 +480,14 @@ namespace WordNetPOSReader
             dict["ADJ"].Add("concerning");
             dict["ADJ"].Add("down");
             dict["ADJ"].Add("following");
-            dict["ADJ"].Add("in");
+            //dict["ADJ"].Add("in");  //the in thing to do
             dict["ADJ"].Add("inside");
             dict["ADJ"].Add("like");
             dict["ADJ"].Add("minus");
             dict["ADJ"].Add("near");
             dict["ADJ"].Add("nothing");
             dict["ADJ"].Add("off");
-            dict["ADJ"].Add("on");
+            //dict["ADJ"].Add("on");    //the switch is on
             dict["ADJ"].Add("opposite");
             dict["ADJ"].Add("other");
             dict["ADJ"].Add("otherwise");
@@ -546,7 +503,7 @@ namespace WordNetPOSReader
             dict["ADJ"].Add("such");
             dict["ADJ"].Add("suchlike");
             dict["ADJ"].Add("sundry");
-            dict["ADJ"].Add("through");
+            //dict["ADJ"].Add("through"); 'i'm through
             dict["ADJ"].Add("under");
             dict["ADJ"].Add("unlike");
             dict["ADJ"].Add("up");
@@ -757,6 +714,7 @@ namespace WordNetPOSReader
             irregularPastParticipleVerbs.Add("forgiven");
             irregularPastParticipleVerbs.Add("sunk");
             irregularPastParticipleVerbs.Add("beheld");
+            irregularPastParticipleVerbs.Add("might");
 
 
             irregularPastSimpleVerbs.Add("arose");
